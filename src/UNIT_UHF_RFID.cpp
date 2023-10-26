@@ -25,7 +25,7 @@ void Unit_UHF_RFID::cleanBuffer() {
 
 /*! @brief Clear the card's data buffer.*/
 void Unit_UHF_RFID::cleanCardsBuffer() {
-    for (int i = 0; i < 200; i++) {
+    for (int i = 0; i < 2; i++) {
         cards[i] = {
             rssi : 0,
             pc : {0},
@@ -68,7 +68,7 @@ void Unit_UHF_RFID::sendCMD(uint8_t *data, size_t size) {
 
 /*! @brief Filter the received message.*/
 bool Unit_UHF_RFID::filterCardInfo(String epc) {
-    for (int i = 0; i < 200; i++) {
+    for (int i = 0; i < 4; i++) {
         if (epc == cards[i].epc_str) {
             return false;
         }

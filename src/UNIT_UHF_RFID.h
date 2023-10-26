@@ -43,7 +43,7 @@ class Unit_UHF_RFID {
    public:
     bool _debug;
     uint8_t buffer[256] = {0};
-    CARD cards[200];
+    CARD cards[4];              // 4 cards support
     Unit_UHF_RFID(HardwareSerial *serial_variable){_serial=serial_variable;}
    public:
     void begin( int baud = 115200,
